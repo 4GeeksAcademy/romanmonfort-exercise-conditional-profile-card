@@ -34,23 +34,33 @@ function render(variables = {}) {
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${variables.name == null ? "Nombre" : variables.name},${
-    variables.lastName
+    variables.lastName == null ? "Apellido" : variables.lastName
   }</h1>
-          <h2>${variables.role}</h2>
-          <h3>${variables.country},${variables.city} </h3>
+          <h2>${variables.role == null ? "Rol" : variables.role}</h2>
+          <h3>${variables.country == null ? "Country" : variables.country},${
+    variables.city == null ? "City" : variables.city
+  } </h3>
           <ul class="${variables.socialMediaPosition}">
             <li><a href="${
-              variables.twitter
-            }"><i class="fab fa-twitter"></i></a></li>
+              variables.twitter == null
+                ? "https://twitter.com/?lang=es"
+                : variables.twitter
+            }" target="_blank" ><i class="fab fa-twitter"></i></a></li>
             <li><a href="${
-              variables.github
-            }"><i class="fab fa-github"></i></a></li>
+              variables.github == null
+                ? "https://github.com/"
+                : variables.github
+            }"target="_blank" ><i class="fab fa-github"></i></a></li>
             <li><a href="${
-              variables.linkedin
-            }"><i class="fab fa-linkedin"></i></a></li>
+              variables.linkedin == null
+                ? "https://uy.linkedin.com/"
+                : variables.linkedin
+            }"target="_blank" ><i class="fab fa-linkedin"></i></a></li>
             <li><a href="${
-              variables.instagram
-            }"><i class="fab fa-instagram"></i></a></li>
+              variables.instagram == null
+                ? "https://www.instagram.com/"
+                : variables.instagram
+            }"target="_blank" ><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
